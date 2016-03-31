@@ -92,12 +92,18 @@ delays = (function() {
                 .style("stroke", color(i))
                 .style("stroke-width", "2px")
                 .style("fill", "rgba(0,0,0,0)")
+                .attr("data-legend", util.verbose_name[KEYS[i]])
+                .attr("data-legend-color", color(i))
                 .attr("d", dummy_line);
-            line.append("title")
-                .text(KEYS[i]);
             line.transition().duration(1500)
                 .attr("d", l);
         });
+
+        svg.append("g")
+            .attr("class","legend")
+            .attr("transform","translate(50,30)")
+            .style("font-size","12px")
+            .call(d3.legend);
     }
 
     return {

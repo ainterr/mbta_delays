@@ -12,8 +12,8 @@ util = (function() {
                 "depart": now.getTime(), 
                 "arrive": now.addMinutes(60 + variance).getTime(),
                 "transit": now.addHours(1).getTime(),
-                "drive": now.addMinutes(30).getTime(),
-                "bike": now.addMinutes(45).getTime(),
+                "driving": now.addMinutes(30).getTime(),
+                "bicycling": now.addMinutes(45).getTime(),
                 //"walk": now.addHours(2).getTime(),
             });
             now = now.addDays(1);
@@ -65,11 +65,21 @@ util = (function() {
         }, 0) / 1000;
     }
 
+    var verbose_name = {
+        "arrive": "Time Arrived",
+        "transit": "Transit Prediction",
+        "driving": "Driving Prediction",
+        "walking": "Walking Prediction",
+        "bicycling": "Bicycling Prediciton",
+    };
+
     return {
         YEAR: 365*24*60*60*1000,
         MONTH: 30*24*60*60*1000,
         WEEK: 7*24*60*60*1000,
         DAY: 24*60*60*1000,
+
+        verbose_name: verbose_name,
 
         color: color,
         get_timestring: get_timestring,

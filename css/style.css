@@ -19,6 +19,30 @@ footer {
     padding-bottom: 10px;
 }
 
-p {
+.data-collection p {
     font-size: 18px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.footer {
+    margin-top: 30px;
+}
+
+.axis path {
+    fill: none;
+    stroke: #000;
+}
+
+.legend rect {
+    fill: white;
+    stroke: black;
+    opacity: 0.8;
+}
+
+.mbta-logo {
+    display: block;
+    margin: 0 auto;
 }

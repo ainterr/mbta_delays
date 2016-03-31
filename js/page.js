@@ -28,10 +28,6 @@ d3.json("http://50.169.192.125:8888/data", function(error, json) {
     area.data(data);
     area.start();
     
-    lost.init(".lost");
-    lost.data(data);
-    lost.start();
-    
     alternatives.init(".alternatives");
     alternatives.data(data);
     alternatives.start();

@@ -19,13 +19,18 @@
 
 <div class="jumbotron">
 <div class="container">
-<h1 class="display-3">MBTA Delays</h1>
-<p>
+<div class="col-md-3">
+<img width="256" alt="MBTA" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/MBTA.svg/256px-MBTA.svg.png" class="mbta-logo" />
+</div>
+<div class="col-md-9">
+<h1>MBTA Delays</h1>
+<p class="text-justify">
 The MBTA wastes a lot of my time on my daily hour and a half commute due to
 it's aging, horribly maintained infrastructure. This is a way of quantifying
 all that lost time and comparing the MBTA to other methods of transportation
 that I could (and probably should) have taken.
 </p>
+</div>
 </div>
 </div>
 
@@ -59,6 +64,14 @@ the server (and how I make requests from my phone) some time soon.
 </p>
 </div>
 
+<div class="col-md-12 legal">
+<p class="text-muted">
+I am not affiliated with the MBTA in any way. This data is a reflection of my
+personal experience - gathered using precise location data and Google Maps
+predictions for various transportation modes.
+</p>
+</div>
+
 </div> <!-- /container -->
 
 <footer class="footer">
@@ -77,7 +90,6 @@ the server (and how I make requests from my phone) some time soon.
 <script src="js/overview.js"></script>
 <script src="js/delays.js"></script>
 <script src="js/area.js"></script>
-<script src="js/lost.js"></script>
 <script src="js/alternatives.js"></script>
 
 <script src="js/page.js"></script>

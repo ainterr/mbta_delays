@@ -94,12 +94,20 @@ area = (function() {
                 .datum(DATA)
                 .attr("class", "area")
                 .style("fill", color(i))
-                .attr("d", dummy_area)
+                .attr("data-legend", util.verbose_name[KEYS[i]])
+                .attr("data-legend-color", color(i))
+                .attr("d", dummy_area);
             area.append("title")
-                .text(KEYS[i]);
+                .text(util.verbose_name[KEYS[i]]);
             area.transition().duration(1500)
                 .attr("d", a);
         });
+
+        svg.append("g")
+            .attr("class","legend")
+            .attr("transform","translate(50,30)")
+            .style("font-size","12px")
+            .call(d3.legend);
     }
 
     return {
