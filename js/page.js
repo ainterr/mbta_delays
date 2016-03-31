@@ -3,7 +3,10 @@
 d3.json("http://50.169.192.125:8888/data", function(error, json) {
     if (error) return console.warn(error);
 
-    data = json.results;
+    data = json.results.map(function(d) {
+        delete d['walking'];
+        return d;
+    });
 
     if(data.length === 0) {
         return console.warn("No data available");
@@ -13,12 +16,14 @@ d3.json("http://50.169.192.125:8888/data", function(error, json) {
         data.splice(data.length-1, 1);
     }
 
-    console.log(data);
-
     overview.init(".overview");
     overview.data(data);
     overview.start();
     
+    delays.init(".delays");
+    delays.data(data);
+    delays.start();
+
     area.init(".area");
     area.data(data);
     area.start();
