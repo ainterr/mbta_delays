@@ -22,7 +22,7 @@ overview = (function() {
 
     function start() {
         div.select(".total")
-          .transition().duration(3000)
+          .transition().duration(1500)
             .tween("text", function() {
                 var i = d3.interpolateRound(0, TOTAL);
                 return function(t) {

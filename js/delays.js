@@ -91,6 +91,7 @@ delays = (function() {
                 .attr("class", "line")
                 .style("stroke", color(i))
                 .style("stroke-width", "2px")
+                .style("fill", "rgba(0,0,0,0)")
                 .attr("d", dummy_line);
             line.append("title")
                 .text(KEYS[i]);
