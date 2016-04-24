@@ -46,3 +46,12 @@ h1 {
     display: block;
     margin: 0 auto;
 }
+
+.error-message {
+    margin-top: 40vh;
+}
+
+.error-message .modal-dialog{
+    width: 60%;
+    text-align: center;    
+}
