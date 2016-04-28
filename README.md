@@ -5,6 +5,6 @@ unforeseen delays (signal problems, buses breaking down, etc). The point of
 this project (developed primarily while riding the T) is to quantify exactly
 how much of my time the T wastes on a daily basis.
 
-After I've collected some data, I'll write a
-[blog](http://ainterr.github.io/blog) post about how exactly the back-end data
-collection works.
+I wrote a [blog
+post](http://ainterr.github.io/blog/technical/quantifying_mbta_delays.html)
+describing the details of the back end of this project if you're interested.

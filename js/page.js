@@ -1,7 +1,7 @@
 //var data = util.random_data(100);
 
 d3.json("http://50.169.192.125:8888/data", function(error, json) {
-    if (error || data.length === 0) {
+    if (error) {
         console.warn("No data available");
         data = util.random_data(100, 20);
 

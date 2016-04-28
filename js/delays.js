@@ -25,7 +25,7 @@ delays = (function() {
     function sum_to(d, key) {
         var sum = 0, total;
         DATA.forEach(function(e) {
-            sum += (e[key] - e[DOMAIN])/60/1000
+            sum += (e[key] - e[DOMAIN])/60/1000;
             if(e === d) total = sum;
         });
         
