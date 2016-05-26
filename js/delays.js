@@ -16,6 +16,9 @@ delays = (function() {
         .orient("bottom");
     var yAxis = d3.svg.axis()
         .scale(y)
+        .tickFormat(function(d) {
+            return d+"%";
+        })
         .orient("left");
 
     var div = {};
@@ -33,7 +36,17 @@ delays = (function() {
     }
 
     function data(data) {
-        DATA = data;
+        DATA = data.map(function(d) {
+            n = {};
+            Object.keys(d).filter(function(k) {
+                return k !== DOMAIN;
+            }).forEach(function(k) {
+                n[k] = (d[k] - d[DOMAIN])/(d["transit"] - d[DOMAIN])*100;
+            });
+            n[DOMAIN] = d[DOMAIN];
+
+            return n;
+        });
 
         if(DATA.length > 0) {
             KEYS = Object.keys(DATA[0]).filter(function(k) {
@@ -52,22 +65,27 @@ delays = (function() {
     
     function start() {
         x.domain(d3.extent(DATA, function(d) { return d[DOMAIN]; }));
-        y.domain([0,
+        y.domain([
+            d3.min(DATA, function(d) {
+                return d3.min(KEYS, function(k) {
+                    return d[k];
+                })
+            }),
             d3.max(DATA, function(d) {
                 return d3.max(KEYS, function(k) {
-                    return (d[k] - d[DOMAIN])/60/1000;
+                    return d[k];
                 });
             })
         ]);
         
         var dummy_line = d3.svg.line()
             .x(function(d) { return x(d[DOMAIN]); })
-            .y(height/2);
+            .y(y(0));
 
         var lines = KEYS.map(function(k) {
             return d3.svg.line()
                 .x(function(d) { return x(d[DOMAIN]); })
-                .y(function(d) { return y((d[k] - d[DOMAIN])/60/1000); });
+                .y(function(d) { return y(d[k]); });
         });
 
         svg.append("g")
@@ -83,7 +101,7 @@ delays = (function() {
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text("Time (minutes)");
+            .text("Percentage of Expected Time");
 
         lines.forEach(function(l, i) {
             var line = svg.append("path")
