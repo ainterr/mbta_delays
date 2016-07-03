@@ -1,6 +1,6 @@
-//var data = util.random_data(100);
-
-d3.json("http://50.169.192.125:8888/data", function(error, json) {
+// Project over and raspberry pi disconnected - load static data now for
+// historical reasons
+d3.json("./data/data.json", function(error, json) {
     if (error) {
         console.warn("No data available");
         data = util.random_data(100, 20);
