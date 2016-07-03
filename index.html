@@ -1,96 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="icon" href="favicon.ico">
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <meta
+http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport"
+content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta
+name="description" content=""> <meta name="author" content=""> <link rel="icon"
+href="favicon.ico">
 
 <title>MBTA Delays</title>
 
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet"> <link href="css/style.css"
+rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="jumbotron">
-<div class="container">
-<div class="col-md-3">
-<img width="256" alt="MBTA" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/MBTA.svg/256px-MBTA.svg.png" class="mbta-logo" />
-</div>
-<div class="col-md-9">
-<h1>MBTA Delays</h1>
-<p class="text-justify">
-The MBTA wastes a lot of my time on my daily hour and a half commute due to
-it's aging, horribly maintained infrastructure. This is a way of quantifying
-all that lost time and comparing the MBTA to other methods of transportation
-that I could (and probably should) have taken.
-</p>
-</div>
-</div>
-</div>
+<div class="jumbotron"> <div class="container"> <div class="col-md-3"> <img
+width="256" alt="MBTA"
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/MBTA.svg/256px-MBTA.svg.png"
+class="mbta-logo" /> </div> <div class="col-md-9"> <h1>MBTA Delays</h1> <p
+class="text-justify"> The MBTA wastes a lot of my time on my daily hour and a
+half commute due to it's aging, horribly maintained infrastructure. This is a
+way of quantifying all that lost time and comparing the MBTA to other methods
+of transportation that I could (and probably should) have taken.  </p> </div>
+</div> </div>
 
 <div class="container">
 
-<div class="col-md-12 overview">
-<h2>I have spent <span class="total bold">0 minutes</span> commuting on the
-MBTA since starting this experiment.</h2>
+<div class="col-md-12 overview"> <h2>I have spent <span class="total bold">0
+minutes</span> commuting on the MBTA since starting this experiment.</h2>
 </div>
 
-<div class="col-md-12 delays">
-<h1>Relative Travel Time by Day</h1>
-</div>
+<div class="col-md-12 delays"> <h1>Relative Travel Time by Day</h1> </div>
 
-<div class="col-md-12 area">
-<h1>Total Time</h1>
-</div>
+<div class="col-md-12 area"> <h1>Total Time</h1> </div>
 
-<div class="col-md-12 alternatives">
-<h1>If the T had been running on time...</h1>
-</div>
+<div class="col-md-12 alternatives"> <h1>If the T had been running on
+time...</h1> </div>
 
-<div class="col-md-12 data-collection">
-<h1>Data Collection</h1>
-<p>
-This data was collected using a Raspberry Pi running a custom REST API written
-with <a href="http://flask.pocoo.org">Flask</a> that fetches data from Google's
-<a href="http://developers.google.com/maps/documentation/distance-matrix/">distancematrix API</a>. 
-I'll write a <a href="http://ainterr.github.io/blog">blog</a> post explaining
-the server (and how I make requests from my phone) some time soon.
-</p>
-</div>
+<div class="col-md-12 data-collection"> <h1>Data Collection</h1> <p> This data
+was collected using a Raspberry Pi running a custom REST API written with <a
+href="http://flask.pocoo.org">Flask</a> that fetches data from Google's <a
+href="http://developers.google.com/maps/documentation/distance-matrix/">distancematrix
+API</a>.  I'll write a <a href="http://ainterr.github.io/blog">blog</a> post
+explaining the server (and how I make requests from my phone) some time soon.
+</p> </div>
 
-<div class="col-md-12 legal">
-<p class="text-muted">
-I am not affiliated with the MBTA in any way. This data is a reflection of my
-personal experience - gathered using precise location data and Google Maps
-predictions for various transportation modes.
-</p>
-</div>
+<div class="col-md-12 legal"> <p class="text-muted"> I am not affiliated with
+the MBTA in any way. This data is a reflection of my personal experience -
+gathered using precise location data and Google Maps predictions for various
+transportation modes.  </p> </div>
 
 </div> <!-- /container -->
 
-<footer class="footer">
-<div class="container">
-<p class="text-muted">Copyright &copy; 2016 Alex Interrante-Grant - <a href='license.txt'>License</a></p>
-</div>
-</footer>
+<footer class="footer"> <div class="container"> <p class="text-muted">Copyright
+&copy; 2016 Alex Interrante-Grant - <a href='license.txt'>License</a></p>
+</div> </footer>
 
-<div class="modal fade error-message">
-<div class="modal-dialog">
-<div class="modal-content">
-<div class="modal-header">
-<h4 class="modal-title">Oops&hellip;</h4>
+<div class="modal fade error-message"> <div class="modal-dialog"> <div
+class="modal-content"> <div class="modal-header"> <h4
+class="modal-title">Oops&hellip;</h4> </div> <div class="modal-body">
+<p>Something went wrong and I couldn't fetch any data - please come back
+later.</p> <p class="text-muted">The data shown on this page has been randomly
+generated instead</p> </div> </div> </div> </div>
+
+<div class="modal fade experiment-done"> <div class="modal-dialog"> <div
+class="modal-content"> <div class="modal-header"> <h4
+class="modal-title">Experiment Complete</h4> </div> <div class="modal-body"> <p>My
+co-op is now over and I am no longer collecting data for this experiment. The
+data presented is now static and is this site is maintained for historical
+reasons. Feel free to browse the data regardless.</p>
 </div>
-<div class="modal-body">
-<p>Something went wrong and I couldn't fetch any data - please
-come back later.</p>
-<p class="text-muted">The data shown on this page has been randomly generated
-instead</p>
+<div class="modal-footer">
+<button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
 </div>
 </div>
 </div>
@@ -109,6 +89,10 @@ instead</p>
 <script src="js/alternatives.js"></script>
 
 <script src="js/page.js"></script>
+
+<script>
+$(".experiment-done").modal();
+</script>
 
 </body>
 
